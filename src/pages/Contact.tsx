@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
     { 
       icon: MapPin, 
       label: t('contact.info.address'),
-      href: 'https://maps.google.com/?q=Bradenton,Lakewood+Ranch,Florida,USA',
+      href: 'https://maps.google.com/?q=Bradenton,Sarasota,Florida,USA',
     },
     { 
       icon: Phone, 
@@ -267,14 +267,14 @@ const Contact: React.FC = () => {
               {/* Google Map */}
               <div className="rounded-2xl overflow-hidden h-[300px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113087.52193067776!2d-82.63096849999999!3d27.4467056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c31f8f1c51b9b7%3A0x6d0f2e9b4a3e0d0b!2sBradenton%2C%20FL%2C%20USA!5e0!3m2!1sen!2sus!4v1705420800000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226817.35387366825!2d-82.70640675!3d27.3364347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c340117a077705%3A0x7d6a2dce6a83bbee!2sSarasota%2C%20FL!5e0!3m2!1sen!2sus!4v1705420800000!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Our Location - Bradenton, Florida"
+                  title="Our Location - Bradenton, Lakewood Ranch & Sarasota, Florida"
                 />
               </div>
             </motion.div>

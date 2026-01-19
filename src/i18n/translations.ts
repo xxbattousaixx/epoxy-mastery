@@ -23,7 +23,7 @@ export const translations = {
       about: {
         title: "About EpoxyMasters",
         subtitle: "Crafting Excellence Since Day One",
-        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in Bradenton/Lakewood Ranch, Florida, we bring world-class epoxy flooring solutions to residential and commercial clients.",
+        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in Bradenton, Lakewood Ranch & Sarasota, Florida, we bring world-class epoxy flooring solutions to residential and commercial clients.",
         mission: "Our Mission",
         missionText: "To deliver premium epoxy flooring solutions that exceed expectations in quality, durability, and aesthetic appeal—all at competitive prices.",
         vision: "Our Vision",
@@ -159,7 +159,7 @@ export const translations = {
           error: "Something went wrong. Please try again.",
         },
         info: {
-          address: "Bradenton/Lakewood Ranch, Florida, USA",
+          address: "Bradenton, Lakewood Ranch & Sarasota, Florida",
           phone: "+1 (941) 518-1657",
           email: "edmena24@gmail.com",
           hours: "Mon-Sat: 8:00 AM - 6:00 PM",
@@ -171,7 +171,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Premium epoxy flooring solutions in Bradenton/Lakewood Ranch, Florida. Transform your space with our expert craftsmanship.",
+        description: "Premium epoxy flooring solutions in Bradenton, Lakewood Ranch & Sarasota, Florida. Transform your space with our expert craftsmanship.",
         quickLinks: "Quick Links",
         services: "Services",
         contact: "Contact",
@@ -215,7 +215,7 @@ export const translations = {
       about: {
         title: "Sobre EpoxyMasters",
         subtitle: "Creando Excelencia Desde el Primer Día",
-        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en Bradenton/Lakewood Ranch, Florida, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
+        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en Bradenton, Lakewood Ranch y Sarasota, Florida, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
         mission: "Nuestra Misión",
         missionText: "Entregar soluciones premium de pisos epóxicos que superen las expectativas en calidad, durabilidad y atractivo estético—todo a precios competitivos.",
         vision: "Nuestra Visión",
@@ -351,7 +351,7 @@ export const translations = {
           error: "Algo salió mal. Por favor intente de nuevo.",
         },
         info: {
-          address: "Bradenton/Lakewood Ranch, Florida, USA",
+          address: "Bradenton, Lakewood Ranch y Sarasota, Florida",
           phone: "+1 (941) 518-1657",
           email: "edmena24@gmail.com",
           hours: "Lun-Sáb: 8:00 AM - 6:00 PM",
@@ -363,7 +363,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Soluciones premium de pisos epóxicos en Bradenton/Lakewood Ranch, Florida. Transforme su espacio con nuestra artesanía experta.",
+        description: "Soluciones premium de pisos epóxicos en Bradenton, Lakewood Ranch y Sarasota, Florida. Transforme su espacio con nuestra artesanía experta.",
         quickLinks: "Enlaces Rápidos",
         services: "Servicios",
         contact: "Contacto",
@@ -407,7 +407,7 @@ export const translations = {
       about: {
         title: "关于 EpoxyMasters",
         subtitle: "从第一天起追求卓越",
-        description: "我们是充满热情的工匠，致力于将普通表面转变为非凡的杰作。我们位于美国佛罗里达州布雷登顿/湖木牧场，为住宅和商业客户提供世界级的环氧地板解决方案。",
+        description: "我们是充满热情的工匠，致力于将普通表面转变为非凡的杰作。我们位于佛罗里达州布雷登顿、湖木牧场和萨拉索塔地区，为住宅和商业客户提供世界级的环氧地板解决方案。",
         mission: "我们的使命",
         missionText: "以极具竞争力的价格提供超越预期的优质环氧地板解决方案，在质量、耐用性和美观度方面超越客户期望。",
         vision: "我们的愿景",
@@ -543,7 +543,7 @@ export const translations = {
           error: "出了点问题。请重试。",
         },
         info: {
-          address: "美国佛罗里达州布雷登顿/湖木牧场",
+          address: "佛罗里达州布雷登顿、湖木牧场和萨拉索塔",
           phone: "+1 (941) 518-1657",
           email: "edmena24@gmail.com",
           hours: "周一至周六：上午8:00 - 下午6:00",
@@ -555,7 +555,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "佛罗里达州布雷登顿/湖木牧场的高端环氧地板解决方案。用我们的专业工艺改造您的空间。",
+        description: "佛罗里达州布雷登顿、湖木牧场和萨拉索塔的高端环氧地板解决方案。用我们的专业工艺改造您的空间。",
         quickLinks: "快速链接",
         services: "服务",
         contact: "联系方式",
