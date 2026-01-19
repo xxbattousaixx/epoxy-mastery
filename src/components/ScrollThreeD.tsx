@@ -8,17 +8,9 @@ interface Section {
   color: number;
   particles: number;
   depth: number;
-  cta?: {
-    text: string;
-    action: () => void;
-  };
 }
 
-interface ScrollThreeDProps {
-  sections?: Section[];
-}
-
-const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
+const ScrollThreeD: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -32,15 +24,14 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
   const [currentSection, setCurrentSection] = useState(0);
   const { t } = useTranslation();
 
-  // Epoxy flooring process sections
-  const defaultSections: Section[] = [
+  // Epoxy flooring process sections - no CTA buttons
+  const displaySections: Section[] = [
     {
       title: t('process.steps.prep.title'),
       subtitle: t('process.steps.prep.description'),
-      color: 0xd4a574, // Warm amber
+      color: 0xd4a574,
       particles: 120,
-      depth: 0,
-      cta: { text: t('hero.cta'), action: () => window.location.href = '/contact' }
+      depth: 0
     },
     {
       title: t('process.steps.primer.title'),
@@ -52,7 +43,7 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
     {
       title: t('process.steps.base.title'),
       subtitle: t('process.steps.base.description'),
-      color: 0x2d3748, // Dark slate
+      color: 0x2d3748,
       particles: 200,
       depth: -120
     },
@@ -73,14 +64,11 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
     {
       title: t('process.steps.cure.title'),
       subtitle: t('process.steps.cure.description'),
-      color: 0xecc94b, // Gold
+      color: 0xecc94b,
       particles: 120,
-      depth: -300,
-      cta: { text: t('nav.getQuote'), action: () => window.location.href = '/contact' }
+      depth: -300
     }
   ];
-
-  const displaySections = sections.length > 0 ? sections : defaultSections;
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -259,20 +247,25 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
     const handleScroll = () => {
       if (!containerRef.current || !cameraRef.current) return;
 
-      const scrollHeight = containerRef.current.scrollHeight - window.innerHeight;
-      const scrolled = window.scrollY;
-      const progress = scrolled / scrollHeight;
+      const containerTop = containerRef.current.getBoundingClientRect().top;
+      const containerHeight = containerRef.current.offsetHeight;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate progress based on how far we've scrolled through this section
+      const scrolledIntoContainer = -containerTop;
+      const scrollableDistance = containerHeight - windowHeight;
+      const progress = Math.max(0, Math.min(1, scrolledIntoContainer / scrollableDistance));
 
       // Move camera through layers based on scroll
       const totalDepth = Math.abs(displaySections[displaySections.length - 1].depth);
       cameraRef.current.position.z = 30 - (progress * (totalDepth + 30));
 
-      // Determine current section
+      // Determine current section with clear boundaries
       const sectionIndex = Math.min(
         Math.floor(progress * displaySections.length),
         displaySections.length - 1
       );
-      setCurrentSection(sectionIndex);
+      setCurrentSection(Math.max(0, sectionIndex));
 
       // Add slight camera rotation based on scroll
       cameraRef.current.rotation.y = progress * 0.2;
@@ -292,51 +285,35 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
         style={{ zIndex: 0 }}
       />
 
-      {/* Fixed content overlay */}
+      {/* Fixed content overlay - only show one section at a time */}
       <div className="fixed inset-0 pointer-events-none z-10 flex items-center justify-center">
-        <div className="text-center px-6 transition-all duration-700">
+        <div className="text-center px-6">
           {displaySections.map((section, index) => (
             <div
               key={index}
-              className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-1000"
-              style={{
-                opacity: currentSection === index ? 1 : 0,
-                pointerEvents: currentSection === index ? 'auto' : 'none'
-              }}
+              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 ${
+                currentSection === index ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
             >
-              <h1 
-                className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 transition-all duration-700"
+              <h2 
+                className={`text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 transition-all duration-500 ${
+                  currentSection === index ? 'translate-y-0 scale-100' : 'translate-y-8 scale-90'
+                }`}
                 style={{
                   color: `#${section.color.toString(16).padStart(6, '0')}`,
-                  transform: `scale(${currentSection === index ? 1 : 0.8})`,
                   textShadow: '0 0 40px rgba(0,0,0,0.5)'
                 }}
               >
                 {section.title}
-              </h1>
+              </h2>
               <p 
-                className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-3xl mx-auto px-4 transition-all duration-700 leading-relaxed"
-                style={{
-                  transform: `translateY(${currentSection === index ? 0 : 20}px)`,
-                  textShadow: '0 0 20px rgba(0,0,0,0.8)'
-                }}
+                className={`text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto px-4 transition-all duration-500 leading-relaxed ${
+                  currentSection === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}
+                style={{ textShadow: '0 0 20px rgba(0,0,0,0.8)' }}
               >
                 {section.subtitle}
               </p>
-              
-              {section.cta && (
-                <button 
-                  className="mt-8 px-8 py-4 rounded-full font-display font-semibold text-lg transition-all duration-300 pointer-events-auto hover:scale-110"
-                  style={{
-                    background: `linear-gradient(135deg, #${section.color.toString(16).padStart(6, '0')}, #${Math.max(0, section.color - 0x111111).toString(16).padStart(6, '0')})`,
-                    color: 'white',
-                    boxShadow: `0 10px 40px rgba(${(section.color >> 16) & 255}, ${(section.color >> 8) & 255}, ${section.color & 255}, 0.4)`
-                  }}
-                  onClick={() => section.cta?.action && section.cta.action()}
-                >
-                  {section.cta.text}
-                </button>
-              )}
             </div>
           ))}
         </div>
@@ -348,11 +325,9 @@ const ScrollThreeD: React.FC<ScrollThreeDProps> = ({ sections = [] }) => {
           {displaySections.map((_, index) => (
             <div
               key={index}
-              className="w-2 h-2 rounded-full transition-all duration-300"
-              style={{
-                backgroundColor: currentSection === index ? '#d4a574' : '#666',
-                transform: currentSection === index ? 'scale(1.5)' : 'scale(1)'
-              }}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentSection === index ? 'bg-primary scale-150' : 'bg-muted-foreground/50'
+              }`}
             />
           ))}
         </div>
