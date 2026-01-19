@@ -21,32 +21,26 @@ const Services: React.FC = () => {
     {
       key: 'epoxy',
       image: industrialFloor1,
-      price: '$4',
     },
     {
       key: 'metallic',
       image: metallicEpoxy1,
-      price: '$8',
     },
     {
       key: 'flake',
       image: flakeFloor1,
-      price: '$5',
     },
     {
       key: 'polyaspartic',
       image: garageFloor1,
-      price: '$7',
     },
     {
       key: 'countertops',
       image: countertop1,
-      price: '$60',
     },
     {
       key: 'industrial',
       image: commercialFloor1,
-      price: '$3',
     },
   ];
 
@@ -89,9 +83,6 @@ const Services: React.FC = () => {
                       alt={t(`services.categories.${service.key}.title`)}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-display font-bold">
-                      {t('services.pricing.from')} {service.price}
-                    </div>
                   </div>
                   <CardHeader>
                     <CardTitle className="font-display text-2xl">
@@ -114,7 +105,7 @@ const Services: React.FC = () => {
                   <CardFooter>
                     <Link to="/contact" className="w-full">
                       <Button variant="outline" className="w-full">
-                        {t('services.pricing.getQuote')}
+                        {t('nav.getQuote')}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
@@ -126,60 +117,28 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* CTA Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center"
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              {t('services.pricing.title')}
+              {t('services.cta.title')}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              All prices include surface preparation, materials, and professional installation.
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+              {t('services.cta.description')}
             </p>
+            <Link to="/contact">
+              <Button variant="cta" size="lg">
+                {t('services.cta.button')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-card rounded-2xl p-8">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left py-4 font-display font-semibold">Service</th>
-                    <th className="text-right py-4 font-display font-semibold">Starting Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {services.map((service) => (
-                    <tr key={service.key} className="border-b border-border/50">
-                      <td className="py-4">
-                        <span className="font-medium">{t(`services.categories.${service.key}.title`)}</span>
-                      </td>
-                      <td className="py-4 text-right">
-                        <span className="text-primary font-display font-bold">{service.price}</span>
-                        <span className="text-muted-foreground text-sm"> {t('services.pricing.perSqFt')}</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              
-              <div className="mt-8 text-center">
-                <p className="text-muted-foreground mb-6">
-                  Final pricing depends on surface condition, square footage, and selected finish.
-                </p>
-                <Link to="/contact">
-                  <Button variant="cta" size="lg">
-                    {t('nav.getQuote')}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </Layout>

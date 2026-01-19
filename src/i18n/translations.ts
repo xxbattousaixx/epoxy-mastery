@@ -16,18 +16,18 @@ export const translations = {
         title: "Transform Your Floors",
         subtitle: "Into Works of Art",
         description: "Premium epoxy and resin flooring solutions that combine durability with stunning aesthetics. Fast installation, lasting results.",
-        cta: "Start Your Project",
+        cta: "Get Free Quote",
         scrollExplore: "Scroll to explore",
       },
       // About
       about: {
         title: "About EpoxyMasters",
         subtitle: "Crafting Excellence Since Day One",
-        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in Cabimas, Zulia, Venezuela, we bring world-class epoxy flooring solutions to residential and commercial clients.",
+        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in Bradenton/Lakewood Ranch, Florida, we bring world-class epoxy flooring solutions to residential and commercial clients.",
         mission: "Our Mission",
         missionText: "To deliver premium epoxy flooring solutions that exceed expectations in quality, durability, and aesthetic appeal—all at competitive prices.",
         vision: "Our Vision",
-        visionText: "To become the leading epoxy flooring contractor in Venezuela, known for innovation, craftsmanship, and customer satisfaction.",
+        visionText: "To become the leading epoxy flooring contractor in Florida, known for innovation, craftsmanship, and customer satisfaction.",
         whyUs: "Why Choose Us",
         reasons: {
           quality: "Premium Quality Materials",
@@ -77,12 +77,10 @@ export const translations = {
             features: ["High traffic rated", "Chemical resistant", "Anti-static options"],
           },
         },
-        pricing: {
-          title: "Transparent Pricing",
-          from: "From",
-          perSqFt: "per sq ft",
-          includes: "Includes",
-          getQuote: "Get Quote",
+        cta: {
+          title: "Ready to Transform Your Space?",
+          description: "Contact us today for a free consultation and personalized quote.",
+          button: "Get Your Free Quote",
         },
       },
       // Process
@@ -161,9 +159,9 @@ export const translations = {
           error: "Something went wrong. Please try again.",
         },
         info: {
-          address: "Cabimas, Zulia, Venezuela",
-          phone: "+58 0412 314 3681",
-          email: "ohnoesninjas@gmail.com",
+          address: "Bradenton/Lakewood Ranch, Florida, USA",
+          phone: "+1 (941) 518-1657",
+          email: "edmena24@gmail.com",
           hours: "Mon-Sat: 8:00 AM - 6:00 PM",
         },
         social: {
@@ -173,7 +171,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Premium epoxy flooring solutions in Cabimas, Zulia. Transform your space with our expert craftsmanship.",
+        description: "Premium epoxy flooring solutions in Bradenton/Lakewood Ranch, Florida. Transform your space with our expert craftsmanship.",
         quickLinks: "Quick Links",
         services: "Services",
         contact: "Contact",
@@ -210,18 +208,18 @@ export const translations = {
         title: "Transforma Tus Pisos",
         subtitle: "En Obras de Arte",
         description: "Soluciones premium de pisos epóxicos y resina que combinan durabilidad con estética impresionante. Instalación rápida, resultados duraderos.",
-        cta: "Iniciar Tu Proyecto",
+        cta: "Cotización Gratis",
         scrollExplore: "Desliza para explorar",
       },
       // About
       about: {
         title: "Sobre EpoxyMasters",
         subtitle: "Creando Excelencia Desde el Primer Día",
-        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en Cabimas, Zulia, Venezuela, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
+        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en Bradenton/Lakewood Ranch, Florida, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
         mission: "Nuestra Misión",
         missionText: "Entregar soluciones premium de pisos epóxicos que superen las expectativas en calidad, durabilidad y atractivo estético—todo a precios competitivos.",
         vision: "Nuestra Visión",
-        visionText: "Convertirnos en el contratista líder de pisos epóxicos en Venezuela, conocido por innovación, artesanía y satisfacción del cliente.",
+        visionText: "Convertirnos en el contratista líder de pisos epóxicos en Florida, conocido por innovación, artesanía y satisfacción del cliente.",
         whyUs: "Por Qué Elegirnos",
         reasons: {
           quality: "Materiales de Primera Calidad",
@@ -271,12 +269,10 @@ export const translations = {
             features: ["Alto tráfico", "Resistente a químicos", "Opciones antiestáticas"],
           },
         },
-        pricing: {
-          title: "Precios Transparentes",
-          from: "Desde",
-          perSqFt: "por pie²",
-          includes: "Incluye",
-          getQuote: "Cotizar",
+        cta: {
+          title: "¿Listo para Transformar Tu Espacio?",
+          description: "Contáctenos hoy para una consulta gratuita y cotización personalizada.",
+          button: "Obtén Tu Cotización Gratis",
         },
       },
       // Process
@@ -355,9 +351,9 @@ export const translations = {
           error: "Algo salió mal. Por favor intente de nuevo.",
         },
         info: {
-          address: "Cabimas, Zulia, Venezuela",
-          phone: "+58 0412 314 3681",
-          email: "ohnoesninjas@gmail.com",
+          address: "Bradenton/Lakewood Ranch, Florida, USA",
+          phone: "+1 (941) 518-1657",
+          email: "edmena24@gmail.com",
           hours: "Lun-Sáb: 8:00 AM - 6:00 PM",
         },
         social: {
@@ -367,7 +363,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Soluciones premium de pisos epóxicos en Cabimas, Zulia. Transforme su espacio con nuestra artesanía experta.",
+        description: "Soluciones premium de pisos epóxicos en Bradenton/Lakewood Ranch, Florida. Transforme su espacio con nuestra artesanía experta.",
         quickLinks: "Enlaces Rápidos",
         services: "Servicios",
         contact: "Contacto",
@@ -404,18 +400,18 @@ export const translations = {
         title: "改造您的地板",
         subtitle: "成为艺术品",
         description: "高端环氧树脂和树脂地板解决方案，将耐用性与令人惊叹的美感相结合。快速安装，持久效果。",
-        cta: "开始您的项目",
+        cta: "免费报价",
         scrollExplore: "滚动探索",
       },
       // About
       about: {
         title: "关于 EpoxyMasters",
         subtitle: "从第一天起追求卓越",
-        description: "我们是充满热情的工匠，致力于将普通表面转变为非凡的杰作。我们位于委内瑞拉苏利亚州卡比马斯，为住宅和商业客户提供世界级的环氧地板解决方案。",
+        description: "我们是充满热情的工匠，致力于将普通表面转变为非凡的杰作。我们位于美国佛罗里达州布雷登顿/湖木牧场，为住宅和商业客户提供世界级的环氧地板解决方案。",
         mission: "我们的使命",
         missionText: "以极具竞争力的价格提供超越预期的优质环氧地板解决方案，在质量、耐用性和美观度方面超越客户期望。",
         vision: "我们的愿景",
-        visionText: "成为委内瑞拉领先的环氧地板承包商，以创新、工艺和客户满意度著称。",
+        visionText: "成为佛罗里达州领先的环氧地板承包商，以创新、工艺和客户满意度著称。",
         whyUs: "为什么选择我们",
         reasons: {
           quality: "优质材料",
@@ -465,12 +461,10 @@ export const translations = {
             features: ["高流量", "耐化学品", "防静电选项"],
           },
         },
-        pricing: {
-          title: "透明定价",
-          from: "起价",
-          perSqFt: "每平方英尺",
-          includes: "包括",
-          getQuote: "获取报价",
+        cta: {
+          title: "准备改造您的空间？",
+          description: "今天就联系我们获取免费咨询和个性化报价。",
+          button: "获取免费报价",
         },
       },
       // Process
@@ -549,9 +543,9 @@ export const translations = {
           error: "出了点问题。请重试。",
         },
         info: {
-          address: "委内瑞拉苏利亚州卡比马斯",
-          phone: "+58 0412 314 3681",
-          email: "ohnoesninjas@gmail.com",
+          address: "美国佛罗里达州布雷登顿/湖木牧场",
+          phone: "+1 (941) 518-1657",
+          email: "edmena24@gmail.com",
           hours: "周一至周六：上午8:00 - 下午6:00",
         },
         social: {
@@ -561,7 +555,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "卡比马斯苏利亚的高端环氧地板解决方案。用我们的专业工艺改造您的空间。",
+        description: "佛罗里达州布雷登顿/湖木牧场的高端环氧地板解决方案。用我们的专业工艺改造您的空间。",
         quickLinks: "快速链接",
         services: "服务",
         contact: "联系方式",

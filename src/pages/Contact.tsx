@@ -9,28 +9,53 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-
-import heroBg from '@/assets/hero-bg.jpg';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: t('contact.form.success'),
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      service: selectedService,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const { data: response, error } = await supabase.functions.invoke('send-contact-email', {
+        body: data,
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: t('contact.form.success'),
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      (e.target as HTMLFormElement).reset();
+      setSelectedService('');
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: t('contact.form.error'),
+        description: error.message || "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const services = [
@@ -46,17 +71,17 @@ const Contact: React.FC = () => {
     { 
       icon: MapPin, 
       label: t('contact.info.address'),
-      href: 'https://maps.google.com/?q=Cabimas,Zulia,Venezuela',
+      href: 'https://maps.google.com/?q=Bradenton,Lakewood+Ranch,Florida,USA',
     },
     { 
       icon: Phone, 
       label: t('contact.info.phone'),
-      href: 'tel:+584123143681',
+      href: 'tel:+19415181657',
     },
     { 
       icon: Mail, 
       label: t('contact.info.email'),
-      href: 'mailto:ohnoesninjas@gmail.com',
+      href: 'mailto:edmena24@gmail.com',
     },
     { 
       icon: Clock, 
@@ -65,7 +90,7 @@ const Contact: React.FC = () => {
     },
   ];
 
-  const whatsappLink = 'https://wa.me/584123143681?text=' + encodeURIComponent('Hello! I\'m interested in your epoxy flooring services.');
+  const whatsappLink = 'https://wa.me/19415181657?text=' + encodeURIComponent('Hello! I\'m interested in your epoxy flooring services.');
 
   return (
     <Layout>
@@ -132,12 +157,12 @@ const Contact: React.FC = () => {
                         id="phone" 
                         name="phone"
                         type="tel" 
-                        placeholder="+58 0412 314 3681"
+                        placeholder="+1 (941) 518-1657"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="service">{t('contact.form.service')}</Label>
-                      <Select name="service">
+                      <Select value={selectedService} onValueChange={setSelectedService}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
@@ -242,14 +267,14 @@ const Contact: React.FC = () => {
               {/* Google Map */}
               <div className="rounded-2xl overflow-hidden h-[300px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62736.90177656424!2d-71.48111649999999!3d10.3971899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8a325b0ea30e1f%3A0x1c9a8bb99c8e4e8f!2sCabimas%2C%20Zulia%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1705420800000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113087.52193067776!2d-82.63096849999999!3d27.4467056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c31f8f1c51b9b7%3A0x6d0f2e9b4a3e0d0b!2sBradenton%2C%20FL%2C%20USA!5e0!3m2!1sen!2sus!4v1705420800000!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Our Location"
+                  title="Our Location - Bradenton, Florida"
                 />
               </div>
             </motion.div>

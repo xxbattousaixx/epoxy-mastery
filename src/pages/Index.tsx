@@ -74,20 +74,12 @@ const Index: React.FC = () => {
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
               {t('hero.description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="hero" size="xl">
-                  {t('hero.cta')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/gallery">
-                <Button variant="hero-outline" size="xl">
-                  <Play className="mr-2 h-5 w-5" />
-                  {t('gallery.viewAll')}
-                </Button>
-              </Link>
-            </div>
+            <Link to="/contact">
+              <Button variant="hero" size="xl">
+                {t('hero.cta')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </motion.div>
           
           {/* Scroll indicator */}
@@ -145,11 +137,8 @@ const Index: React.FC = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             {t('process.title')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-4">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {t('process.subtitle')}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            👇 {t('hero.scrollExplore')}
           </p>
         </div>
         <ScrollThreeD />
