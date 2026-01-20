@@ -18,7 +18,7 @@ import bathroomFloor1 from '@/assets/gallery/bathroom-floor-1.jpg';
 import galaxyFloor1 from '@/assets/gallery/galaxy-floor-1.jpg';
 import officeFloor1 from '@/assets/gallery/office-floor-1.jpg';
 import outdoorFloor1 from '@/assets/gallery/outdoor-floor-1.jpg';
-import riverTable1 from '@/assets/gallery/river-table-1.jpg';
+
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
@@ -105,12 +105,6 @@ const Gallery: React.FC = () => {
       category: 'residential', 
       title: 'Pool Patio Coating', 
       desc: 'Decorative stamped coating for outdoor patio areas, providing slip-resistance and UV stability.'
-    },
-    { 
-      src: riverTable1, 
-      category: 'countertops', 
-      title: 'LED River Table', 
-      desc: 'Custom live-edge wood table with luminescent blue epoxy river, featuring integrated LED lighting.'
     },
   ];
 
