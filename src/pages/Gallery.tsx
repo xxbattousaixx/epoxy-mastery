@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 
 import metallicEpoxy1 from '@/assets/gallery/metallic-epoxy-1.jpg';
@@ -114,6 +115,12 @@ const Gallery: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Epoxy Floor Gallery - Project Photos & Inspiration"
+        description="Browse our gallery of stunning epoxy flooring projects. See metallic epoxy, garage floors, industrial coatings, and countertops. Get inspired for your next project."
+        keywords="epoxy floor gallery, metallic epoxy photos, garage floor examples, industrial flooring images, epoxy countertop pictures, floor coating portfolio"
+        url="/gallery"
+      />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4 text-center">
