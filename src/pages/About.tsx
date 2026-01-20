@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Shield, Zap, DollarSign, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 
 import installation1 from '@/assets/gallery/installation-1.jpg';
@@ -21,6 +22,12 @@ const About: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="About Us - Our Story & Mission"
+        description="Learn about EpoxyMasters - Cabimas, Venezuela's trusted epoxy flooring experts. 10+ years experience, 500+ projects completed. Quality craftsmanship and customer satisfaction guaranteed."
+        keywords="about EpoxyMasters, epoxy flooring company, Cabimas flooring contractors, Venezuela epoxy specialists, floor coating experts"
+        url="/about"
+      />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4 text-center">

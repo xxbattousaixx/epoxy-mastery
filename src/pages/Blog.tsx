@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, Tag, X } from 'lucide-react';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -839,6 +840,12 @@ const Blog: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Epoxy Flooring Blog - Tips, Trends & Guides"
+        description="Expert epoxy flooring tips, latest trends, and comprehensive guides. Learn about metallic epoxy, maintenance, DIY vs professional installation, and more."
+        keywords="epoxy flooring blog, floor coating tips, metallic epoxy trends, epoxy maintenance guide, flooring articles, epoxy how-to"
+        url="/blog"
+      />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4 text-center">

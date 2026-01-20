@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -46,6 +47,12 @@ const Services: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Epoxy Flooring Services - Metallic, Industrial & Residential"
+        description="Complete epoxy flooring services: metallic epoxy, industrial coatings, garage floors, polyaspartic coatings, and custom countertops. Free quotes in Cabimas, Zulia."
+        keywords="epoxy flooring services, metallic epoxy installation, industrial floor coating, garage floor epoxy, polyaspartic coating, epoxy countertops, Cabimas services"
+        url="/services"
+      />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4 text-center">

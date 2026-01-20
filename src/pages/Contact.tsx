@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -94,6 +95,12 @@ const Contact: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact Us - Get a Free Epoxy Flooring Quote"
+        description="Contact EpoxyMasters for a free epoxy flooring quote. Serving Cabimas, Zulia and surrounding areas. Call, email, or fill out our contact form for fast response."
+        keywords="contact epoxy flooring, free floor coating quote, epoxy installation estimate, Cabimas flooring contact, Venezuela epoxy quote"
+        url="/contact"
+      />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4 text-center">
