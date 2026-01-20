@@ -25,6 +25,7 @@ import flakeFloor1 from '@/assets/gallery/flake-floor-1.jpg';
 import countertop1 from '@/assets/gallery/countertop-1.jpg';
 import residentialFloor1 from '@/assets/gallery/residential-floor-1.jpg';
 import countertop2 from '@/assets/gallery/countertop-2.jpg';
+import heroVideo from '@/assets/hero-video.mp4';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Index: React.FC = () => {
@@ -54,14 +55,21 @@ const Index: React.FC = () => {
         description="Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Bradenton, Lakewood Ranch, and Sarasota, Florida. Metallic epoxy, garage coatings, industrial floors."
         keywords="epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, Bradenton, Lakewood Ranch, Sarasota, Florida"
       />
-      {/* Static Hero Section */}
+      {/* Hero Section with Video Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            poster={heroBg}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
