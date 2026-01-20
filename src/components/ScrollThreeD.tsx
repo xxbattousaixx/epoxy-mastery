@@ -21,7 +21,7 @@ const ScrollThreeD: React.FC = () => {
     meshes: THREE.Mesh[];
     position: number;
   }>>([]);
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection, setCurrentSection] = useState(-1); // Start hidden until scrolled into view
   const { t } = useTranslation();
 
   // Epoxy flooring process sections - no CTA buttons
@@ -250,6 +250,12 @@ const ScrollThreeD: React.FC = () => {
       const containerTop = containerRef.current.getBoundingClientRect().top;
       const containerHeight = containerRef.current.offsetHeight;
       const windowHeight = window.innerHeight;
+      
+      // Only start showing content when user has scrolled the section into view
+      if (containerTop > windowHeight * 0.3) {
+        setCurrentSection(-1); // Hide all sections when not yet scrolled to this area
+        return;
+      }
       
       // Calculate progress based on how far we've scrolled through this section
       const scrolledIntoContainer = -containerTop;
