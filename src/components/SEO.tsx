@@ -17,9 +17,9 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://epoxy-masters.com';
-const DEFAULT_TITLE = 'EpoxyMasters - Premium Epoxy & Resin Flooring | Cabimas, Venezuela';
-const DEFAULT_DESCRIPTION = 'Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Cabimas, Zulia. Metallic epoxy, garage coatings, industrial floors. Fast installation, 5-year warranty.';
-const DEFAULT_KEYWORDS = 'epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, floor coating, Cabimas, Zulia, Venezuela, pisos epóxicos, revestimiento de pisos';
+const DEFAULT_TITLE = 'EpoxyMasters - Premium Epoxy & Resin Flooring | Bradenton & Sarasota, FL';
+const DEFAULT_DESCRIPTION = 'Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Bradenton, Lakewood Ranch, and Sarasota, Florida. Metallic epoxy, garage coatings, industrial floors. Fast installation, 5-year warranty.';
+const DEFAULT_KEYWORDS = 'epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, floor coating, Bradenton, Lakewood Ranch, Sarasota, Florida, FL, epoxy contractor';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const SEO: React.FC<SEOProps> = ({
@@ -41,23 +41,23 @@ const SEO: React.FC<SEOProps> = ({
     '@type': 'LocalBusiness',
     '@id': `${BASE_URL}/#business`,
     name: 'EpoxyMasters',
-    alternateName: 'Epoxy Masters Venezuela',
+    alternateName: 'Epoxy Masters Florida',
     description: DEFAULT_DESCRIPTION,
     url: BASE_URL,
-    telephone: '+58-424-123-4567',
-    email: 'info@epoxymasters.com',
+    telephone: '+1-941-518-1657',
+    email: 'edmena24@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Av. Principal de Cabimas',
-      addressLocality: 'Cabimas',
-      addressRegion: 'Zulia',
-      postalCode: '4013',
-      addressCountry: 'VE',
+      streetAddress: 'Bradenton',
+      addressLocality: 'Bradenton',
+      addressRegion: 'FL',
+      postalCode: '34205',
+      addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 10.3959,
-      longitude: -71.4440,
+      latitude: 27.4989,
+      longitude: -82.5748,
     },
     openingHoursSpecification: [
       {
@@ -83,15 +83,37 @@ const SEO: React.FC<SEOProps> = ({
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 10.3959,
-        longitude: -71.4440,
+        latitude: 27.4989,
+        longitude: -82.5748,
       },
-      geoRadius: '100000',
+      geoRadius: '50000',
     },
-    serviceArea: {
-      '@type': 'AdministrativeArea',
-      name: 'Zulia, Venezuela',
-    },
+    serviceArea: [
+      {
+        '@type': 'City',
+        name: 'Bradenton',
+        containedIn: {
+          '@type': 'State',
+          name: 'Florida',
+        },
+      },
+      {
+        '@type': 'City',
+        name: 'Lakewood Ranch',
+        containedIn: {
+          '@type': 'State',
+          name: 'Florida',
+        },
+      },
+      {
+        '@type': 'City',
+        name: 'Sarasota',
+        containedIn: {
+          '@type': 'State',
+          name: 'Florida',
+        },
+      },
+    ],
   };
 
   // Service Schema
@@ -104,10 +126,10 @@ const SEO: React.FC<SEOProps> = ({
     },
     areaServed: {
       '@type': 'State',
-      name: 'Zulia',
+      name: 'Florida',
       containedIn: {
         '@type': 'Country',
-        name: 'Venezuela',
+        name: 'United States',
       },
     },
     hasOfferCatalog: {
@@ -159,10 +181,10 @@ const SEO: React.FC<SEOProps> = ({
     logo: `${BASE_URL}/logo.png`,
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+58-424-123-4567',
+      telephone: '+1-941-518-1657',
       contactType: 'customer service',
-      areaServed: 'VE',
-      availableLanguage: ['Spanish', 'English'],
+      areaServed: 'US',
+      availableLanguage: ['English', 'Spanish'],
     },
   };
 
@@ -251,9 +273,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="EpoxyMasters" />
-      <meta property="og:locale" content="es_VE" />
-      <meta property="og:locale:alternate" content="en_US" />
-      <meta property="og:locale:alternate" content="zh_CN" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -270,10 +290,10 @@ const SEO: React.FC<SEOProps> = ({
       )}
 
       {/* Geo Tags */}
-      <meta name="geo.region" content="VE-V" />
-      <meta name="geo.placename" content="Cabimas" />
-      <meta name="geo.position" content="10.3959;-71.4440" />
-      <meta name="ICBM" content="10.3959, -71.4440" />
+      <meta name="geo.region" content="US-FL" />
+      <meta name="geo.placename" content="Bradenton" />
+      <meta name="geo.position" content="27.4989;-82.5748" />
+      <meta name="ICBM" content="27.4989, -82.5748" />
 
       {/* Structured Data */}
       <script type="application/ld+json">
