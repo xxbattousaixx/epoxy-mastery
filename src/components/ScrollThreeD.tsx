@@ -21,7 +21,8 @@ const ScrollThreeD: React.FC = () => {
     meshes: THREE.Mesh[];
     position: number;
   }>>([]);
-  const [currentSection, setCurrentSection] = useState(-1); // Start hidden until scrolled into view
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation();
 
   // Epoxy flooring process sections - no CTA buttons
@@ -242,7 +243,6 @@ const ScrollThreeD: React.FC = () => {
     };
   }, []);
 
-  // Handle scroll
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current || !cameraRef.current) return;
@@ -251,11 +251,8 @@ const ScrollThreeD: React.FC = () => {
       const containerHeight = containerRef.current.offsetHeight;
       const windowHeight = window.innerHeight;
       
-      // Only start showing content when user has scrolled the section into view
-      if (containerTop > windowHeight * 0.3) {
-        setCurrentSection(-1); // Hide all sections when not yet scrolled to this area
-        return;
-      }
+      // Show text only when the 3D section is actually in view (scrolled past hero)
+      setIsVisible(containerTop < windowHeight * 0.5);
       
       // Calculate progress based on how far we've scrolled through this section
       const scrolledIntoContainer = -containerTop;
@@ -291,8 +288,8 @@ const ScrollThreeD: React.FC = () => {
         style={{ zIndex: 0 }}
       />
 
-      {/* Fixed content overlay - only show one section at a time */}
-      <div className="fixed inset-0 pointer-events-none z-10 flex items-center justify-center">
+      {/* Fixed content overlay - only show when scrolled into view */}
+      <div className={`fixed inset-0 pointer-events-none z-10 flex items-center justify-center transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <div className="text-center px-6">
           {displaySections.map((section, index) => (
             <div
