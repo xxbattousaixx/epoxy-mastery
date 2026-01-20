@@ -56,20 +56,19 @@ const Index: React.FC = () => {
         keywords="epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, Bradenton, Lakewood Ranch, Sarasota, Florida"
       />
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-epoxy-charcoal">
         {/* Video Background */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
-            poster={heroBg}
+            className="w-full h-full object-cover opacity-80"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-epoxy-charcoal/60 via-epoxy-charcoal/40 to-epoxy-charcoal" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
@@ -84,7 +83,15 @@ const Index: React.FC = () => {
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
               <span className="text-foreground">{t('hero.title')}</span>
               <br />
-              <span className="text-gradient">{t('hero.subtitle')}</span>
+              <span 
+                className="inline-block bg-clip-text text-transparent animate-shimmer"
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, hsl(38 92% 50%) 0%, hsl(45 100% 70%) 25%, hsl(32 95% 44%) 50%, hsl(45 100% 70%) 75%, hsl(38 92% 50%) 100%)',
+                  backgroundSize: '200% 100%',
+                }}
+              >
+                {t('hero.subtitle')}
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
               {t('hero.description')}
