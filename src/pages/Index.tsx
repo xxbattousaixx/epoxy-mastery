@@ -51,8 +51,8 @@ const Index: React.FC = () => {
       <SEO 
         url="/"
         title="Premium Epoxy & Resin Flooring"
-        description="Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Cabimas, Zulia. Metallic epoxy, garage coatings, industrial floors. Fast installation, 5-year warranty."
-        keywords="epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, Cabimas, Venezuela, pisos epóxicos"
+        description="Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Bradenton, Lakewood Ranch, and Sarasota, Florida. Metallic epoxy, garage coatings, industrial floors."
+        keywords="epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, Bradenton, Lakewood Ranch, Sarasota, Florida"
       />
       {/* Static Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
