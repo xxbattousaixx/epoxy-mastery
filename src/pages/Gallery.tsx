@@ -5,6 +5,7 @@ import { X } from 'lucide-react';
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
+import ChromaticRippleHero from '@/components/ChromaticRippleHero';
 
 import metallicEpoxy1 from '@/assets/gallery/metallic-epoxy-1.jpg';
 import metallicEpoxy2 from '@/assets/gallery/metallic-epoxy-2.jpg';
@@ -122,14 +123,16 @@ const Gallery: React.FC = () => {
         url="/gallery"
       />
       {/* Hero Section */}
-      <section className="relative py-32 pt-40 bg-gradient-to-b from-secondary/50 to-background">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-32 pt-40 overflow-hidden">
+        <ChromaticRippleHero />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background z-[1]" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-display text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 text-foreground drop-shadow-lg">
               {t('gallery.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
