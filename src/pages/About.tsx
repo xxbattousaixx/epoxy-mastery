@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Shield, Zap, DollarSign, Award, ArrowRight } from 'lucide-react';
+import { Shield, Zap, DollarSign, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
@@ -17,15 +17,14 @@ const About: React.FC = () => {
     { icon: Shield, key: 'quality' },
     { icon: Zap, key: 'fast' },
     { icon: DollarSign, key: 'price' },
-    { icon: Award, key: 'warranty' },
   ];
 
   return (
     <Layout>
       <SEO 
         title="About Us - Our Story & Mission"
-        description="Learn about EpoxyMasters - Cabimas, Venezuela's trusted epoxy flooring experts. 10+ years experience, 500+ projects completed. Quality craftsmanship and customer satisfaction guaranteed."
-        keywords="about EpoxyMasters, epoxy flooring company, Cabimas flooring contractors, Venezuela epoxy specialists, floor coating experts"
+        description="Learn about EpoxyMasters - Bradenton, Lakewood Ranch, and Sarasota's trusted epoxy flooring experts. Quality craftsmanship and customer satisfaction guaranteed."
+        keywords="about EpoxyMasters, epoxy flooring company, Bradenton flooring contractors, Sarasota epoxy specialists, floor coating experts, Florida"
         url="/about"
       />
       {/* Hero Section */}
