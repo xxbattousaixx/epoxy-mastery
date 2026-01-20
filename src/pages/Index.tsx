@@ -70,6 +70,9 @@ const Index: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary font-medium text-sm mb-6">
+              {t('common.premium')} • {t('common.fast')} • {t('common.affordable')}
+            </span>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
               <span className="text-foreground">{t('hero.title')}</span>
               <br />
