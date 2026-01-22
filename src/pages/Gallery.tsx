@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import ChromaticRippleHero from '@/components/ChromaticRippleHero';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
+// After images (finished epoxy floors)
 import metallicEpoxy1 from '@/assets/gallery/metallic-epoxy-1.jpg';
 import metallicEpoxy2 from '@/assets/gallery/metallic-epoxy-2.jpg';
 import industrialFloor1 from '@/assets/gallery/industrial-floor-1.jpg';
@@ -23,22 +24,27 @@ import galaxyFloor1 from '@/assets/gallery/galaxy-floor-1.jpg';
 import officeFloor1 from '@/assets/gallery/office-floor-1.jpg';
 import outdoorFloor1 from '@/assets/gallery/outdoor-floor-1.jpg';
 
-// Before/After transformation pairs
+// Before images (plain concrete floors)
+import beforeGarage1 from '@/assets/gallery/before-garage-1.jpg';
+import beforeIndustrial1 from '@/assets/gallery/before-industrial-1.jpg';
+import beforeOffice1 from '@/assets/gallery/before-office-1.jpg';
+
+// Before/After transformation pairs - same space, plain concrete → finished epoxy
 const transformations = [
   {
-    before: garageFloor1,
+    before: beforeGarage1,
     after: metallicEpoxy1,
-    title: 'Garage to Metallic Showroom',
+    title: 'Garage: Plain Concrete → Metallic Epoxy',
   },
   {
-    before: industrialFloor1,
+    before: beforeIndustrial1,
     after: flakeFloor1,
-    title: 'Industrial to Decorative Flake',
+    title: 'Warehouse: Worn Concrete → Flake System',
   },
   {
-    before: officeFloor1,
+    before: beforeOffice1,
     after: commercialFloor1,
-    title: 'Office Floor Upgrade',
+    title: 'Commercial: Raw Floor → Showroom Finish',
   },
 ];
 
