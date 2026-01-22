@@ -1,18 +1,29 @@
 # Robots.txt for epoxy-masters.com
+# Optimized for local SEO - Bradenton, Sarasota, Lakewood Ranch FL
 
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
-# Sitemaps
+# Sitemap location
 Sitemap: https://epoxy-masters.com/sitemap.xml
 
-# Crawlers
+# Google
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Bingbot
+User-agent: Googlebot-Image
 Allow: /
 
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
@@ -25,9 +36,31 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Block common bot patterns for security
+User-agent: Pinterest
+Allow: /
+
+# SEO Tools - Rate limited
 User-agent: AhrefsBot
 Crawl-delay: 10
 
 User-agent: SemrushBot
 Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# Block bad bots
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+# Host directive
+Host: https://epoxy-masters.com
