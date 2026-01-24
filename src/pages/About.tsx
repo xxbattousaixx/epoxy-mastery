@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Shield, Zap, DollarSign, ArrowRight } from 'lucide-react';
+import { Shield, Zap, DollarSign, ArrowRight, Wrench, Layers, Droplets, Palette, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import ChromaticRippleHero from '@/components/ChromaticRippleHero';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import installation1 from '@/assets/gallery/installation-1.jpg';
 import residentialFloor1 from '@/assets/gallery/residential-floor-1.jpg';
@@ -18,6 +19,16 @@ const About: React.FC = () => {
     { icon: Shield, key: 'quality' },
     { icon: Zap, key: 'fast' },
     { icon: DollarSign, key: 'price' },
+  ];
+
+  const resinSystems = [
+    { key: 'silica', icon: Layers },
+    { key: 'quartz', icon: Sparkles },
+    { key: 'flake', icon: Palette },
+    { key: 'glitter', icon: Sparkles },
+    { key: 'metallic', icon: Droplets },
+    { key: 'solidColor', icon: Palette },
+    { key: 'threeD', icon: Layers },
   ];
 
   return (
@@ -93,8 +104,232 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Surface Preparation & Crack Repair */}
       <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              {t('about.expertise.title')}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t('about.expertise.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Surface Preparation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="h-full hover:shadow-gold transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Wrench className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-display text-2xl">
+                    {t('about.expertise.surfacePrep.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    {t('about.expertise.surfacePrep.description')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {(t('about.expertise.surfacePrep.methods', { returnObjects: true }) as string[]).map((method, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        {method}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Crack Repair */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="h-full hover:shadow-gold transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Layers className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-display text-2xl">
+                    {t('about.expertise.crackRepair.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    {t('about.expertise.crackRepair.description')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {(t('about.expertise.crackRepair.methods', { returnObjects: true }) as string[]).map((method, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        {method}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Cove Base */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="h-full hover:shadow-gold transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Droplets className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-display text-2xl">
+                    {t('about.expertise.coveBase.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    {t('about.expertise.coveBase.description')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {(t('about.expertise.coveBase.benefits', { returnObjects: true }) as string[]).map((benefit, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Primer Varieties */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="font-display text-4xl font-bold">
+                {t('about.primers.title')}
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                {t('about.primers.description')}
+              </p>
+              
+              <div className="space-y-4">
+                {(t('about.primers.types', { returnObjects: true }) as Array<{name: string; desc: string}>).map((primer, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="glass-card p-4 rounded-xl"
+                  >
+                    <h4 className="font-display font-semibold text-primary">{primer.name}</h4>
+                    <p className="text-muted-foreground text-sm">{primer.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="font-display text-4xl font-bold">
+                {t('about.topcoat.title')}
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                {t('about.topcoat.description')}
+              </p>
+              
+              <div className="glass-card p-6 rounded-2xl">
+                <ul className="space-y-3">
+                  {(t('about.topcoat.benefits', { returnObjects: true }) as string[]).map((benefit, i) => (
+                    <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                      <Sparkles className="h-4 w-4 text-primary shrink-0" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resin Systems */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              {t('about.resinSystems.title')}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t('about.resinSystems.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {resinSystems.map((system, index) => (
+              <motion.div
+                key={system.key}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <Card className="text-center hover:shadow-gold transition-all duration-300 group cursor-default">
+                  <CardContent className="pt-6">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                      <system.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                    </div>
+                    <h3 className="font-display font-semibold text-lg mb-1">
+                      {t(`about.resinSystems.types.${system.key}.name`)}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {t(`about.resinSystems.types.${system.key}.desc`)}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +342,7 @@ const About: React.FC = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reasons.map((reason, index) => (
               <motion.div
                 key={reason.key}
