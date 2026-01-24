@@ -31,6 +31,54 @@ const About: React.FC = () => {
     { key: 'threeD', icon: Layers },
   ];
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Why is surface preparation important for epoxy flooring?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Proper surface preparation is critical for epoxy adhesion and longevity. We use diamond grinding to create the ideal surface profile, remove contaminants, and conduct moisture testing to ensure the concrete is ready. Without proper prep, epoxy can peel, bubble, or fail prematurely.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What types of resin systems do you offer?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We offer a wide variety of resin systems including: Silica sand for industrial durability, Quartz aggregate for decorative strength, Flake systems for multi-color patterns, Glitter for sparkle effects, Metallic epoxy for stunning 3D designs, Solid color for clean professional looks, and 3D epoxy for artistic custom floors.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does epoxy flooring take to cure?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Epoxy curing times vary by system. Typically, you can walk on the floor within 24 hours and return to light use in 48-72 hours. Full chemical cure and maximum durability is achieved in 7 days. Temperature and humidity affect cure times - we apply a protective top coat to all jobs for optimal curing and longevity.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you perform moisture testing before installation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, moisture testing is a standard part of our surface preparation process. Excess moisture in concrete can cause epoxy delamination and coating failure. We use professional moisture meters and calcium chloride tests to ensure your slab is within acceptable moisture levels before application.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What primer types are used for epoxy flooring?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We use various primer types based on substrate conditions: Penetrating primers for porous concrete, Moisture-tolerant primers for slabs with higher moisture content, High-build primers to fill minor imperfections, and Bonding primers for previously coated surfaces. The right primer ensures maximum adhesion and coating performance.',
+        },
+      },
+    ],
+  };
+
   return (
     <Layout>
       <SEO 
@@ -38,6 +86,11 @@ const About: React.FC = () => {
         description="Learn about EpoxyMasters - Bradenton, Lakewood Ranch, and Sarasota's trusted epoxy flooring experts. Quality craftsmanship and customer satisfaction guaranteed."
         keywords="about EpoxyMasters, epoxy flooring company, Bradenton flooring contractors, Sarasota epoxy specialists, floor coating experts, Florida"
         url="/about"
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Hero Section */}
       <section className="relative py-32 pt-40 overflow-hidden">
