@@ -9,8 +9,8 @@ const Privacy: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy | EpoxyMasters"
-        description="Privacy Policy for EpoxyMasters epoxy flooring services in Bradenton, Lakewood Ranch, and Sarasota, Florida."
+        title="Privacy Policy"
+        description="Privacy Policy for EpoxyMasters epoxy flooring services in Bradenton, Lakewood Ranch, and Sarasota, FL."
         url="https://epoxy-masters.com/privacy"
       />
 
