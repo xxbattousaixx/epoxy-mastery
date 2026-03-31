@@ -51,8 +51,8 @@ const Index: React.FC = () => {
     <Layout>
       <SEO 
         url="/"
-        title="Premium Epoxy & Resin Flooring"
-        description="Transform your floors into works of art with EpoxyMasters. Premium epoxy and resin flooring solutions in Bradenton, Lakewood Ranch, and Sarasota, Florida. Metallic epoxy, garage coatings, industrial floors."
+        title="Epoxy Flooring Bradenton & Sarasota FL"
+        description="Premium epoxy and resin flooring in Bradenton, Lakewood Ranch & Sarasota, FL. Metallic epoxy, garage coatings, industrial floors. Free quotes!"
         keywords="epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, Bradenton, Lakewood Ranch, Sarasota, Florida"
       />
       {/* Hero Section with Video Background */}

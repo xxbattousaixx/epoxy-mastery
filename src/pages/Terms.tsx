@@ -6,8 +6,8 @@ const Terms: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="Terms of Service | EpoxyMasters"
-        description="Terms of Service for EpoxyMasters epoxy flooring services in Bradenton, Lakewood Ranch, and Sarasota, Florida."
+        title="Terms of Service"
+        description="Terms of Service for EpoxyMasters epoxy flooring services in Bradenton, Lakewood Ranch, and Sarasota, FL."
         url="https://epoxy-masters.com/terms"
       />
 
