@@ -32,7 +32,7 @@ export default function staticPages(): Plugin {
           .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`)
           .replace(/<meta name="twitter:url"[^>]*>/, `<meta name="twitter:url" content="${url}" />`)
           .replace('<div id="root"></div>', `<div id="root"><h1>${h1}</h1>${nav}</div>`);
-        const out = r === "/" ? shellPath : path.join(dist, r, "index.html");
+        const out = r === "/" ? shellPath : path.join(dist, `${r.replace(/^\//, "")}.html`);
         fs.mkdirSync(path.dirname(out), { recursive: true });
         fs.writeFileSync(out, html);
       }
