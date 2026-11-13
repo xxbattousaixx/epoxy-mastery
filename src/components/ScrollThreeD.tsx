@@ -23,6 +23,7 @@ const ScrollThreeD: React.FC = () => {
   }>>([]);
   const [currentSection, setCurrentSection] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [notPast, setNotPast] = useState(true);
   const { t } = useTranslation();
 
   // Epoxy flooring process sections - no CTA buttons
@@ -252,7 +253,10 @@ const ScrollThreeD: React.FC = () => {
       const windowHeight = window.innerHeight;
       
       // Show text only when the 3D section is actually in view (scrolled past hero)
-      setIsVisible(containerTop < windowHeight * 0.5);
+      const containerBottom = containerRef.current.getBoundingClientRect().bottom;
+      // Visible only while the 3D section occupies the viewport; hide once the next content arrives
+      setIsVisible(containerTop < windowHeight * 0.5 && containerBottom > windowHeight * 0.6);
+      setNotPast(containerBottom > windowHeight * 0.6);
       
       // Calculate progress based on how far we've scrolled through this section
       const scrolledIntoContainer = -containerTop;
@@ -284,8 +288,8 @@ const ScrollThreeD: React.FC = () => {
     <div ref={containerRef} className="relative w-full" style={{ height: `${displaySections.length * 100}vh` }}>
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full"
-        style={{ zIndex: 0 }}
+        className={`fixed top-0 left-0 w-full h-full transition-opacity duration-500 ${notPast ? 'opacity-100' : 'opacity-0'}`}
+        style={{ zIndex: 0, pointerEvents: 'none' }}
       />
 
       {/* Fixed content overlay - only show when scrolled into view */}
@@ -323,7 +327,7 @@ const ScrollThreeD: React.FC = () => {
       </div>
 
       {/* Progress indicator */}
-      <div className="fixed bottom-8 right-8 z-20">
+      <div className={`fixed bottom-8 right-8 z-20 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col items-center gap-2">
           {displaySections.map((_, index) => (
             <div
@@ -337,7 +341,7 @@ const ScrollThreeD: React.FC = () => {
       </div>
 
       {/* Scroll indicator (only on first section) */}
-      {currentSection === 0 && (
+      {currentSection === 0 && isVisible && (
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center text-white/60 animate-pulse">
           <p className="text-sm mb-2 font-display">{t('hero.scrollExplore')}</p>
           <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
