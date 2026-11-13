@@ -27,12 +27,15 @@ export default function staticPages(): Plugin {
       for (const r of routes) {
         const url = BASE + (r === "/" ? "/" : r);
         const h1 = r === "/" ? "Epoxy Flooring St. Petersburg, FL" : `${label(r)} | EpoxyMasters`;
-        const html = shell
+        const title = r === "/" ? null : `${label(r)} | EpoxyMasters`.slice(0, 60);
+        let html = shell;
+        if (title) html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
+        html = html
           .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}" />`)
           .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`)
           .replace(/<meta name="twitter:url"[^>]*>/, `<meta name="twitter:url" content="${url}" />`)
           .replace('<div id="root"></div>', `<div id="root"><h1>${h1}</h1>${nav}</div>`);
-        const out = r === "/" ? shellPath : path.join(dist, r, "index.html");
+        const out = r === "/" ? shellPath : path.join(dist, `${r.replace(/^\//, "")}.html`);
         fs.mkdirSync(path.dirname(out), { recursive: true });
         fs.writeFileSync(out, html);
       }

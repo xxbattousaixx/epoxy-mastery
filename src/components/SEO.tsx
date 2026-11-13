@@ -17,7 +17,7 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://epoxy-masters.com';
-const DEFAULT_TITLE = 'Epoxy Flooring St. Petersburg, FL | Garage & Commercial Floors | EpoxyMasters';
+const DEFAULT_TITLE = 'Epoxy Flooring St. Petersburg, FL | EpoxyMasters';
 const DEFAULT_DESCRIPTION = 'Garage, metallic and commercial epoxy flooring in St. Petersburg & Pinellas County, FL. Free quotes. Call (941) 518-1657.';
 const DEFAULT_KEYWORDS = 'epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, floor coating, St. Petersburg, Pinellas County, Bradenton, Lakewood Ranch, Sarasota, Florida, FL, epoxy contractor';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
