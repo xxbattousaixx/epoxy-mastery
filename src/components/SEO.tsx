@@ -87,6 +87,8 @@ const SEO: React.FC<SEOProps> = ({
       geoRadius: '50000',
     },
     serviceArea: [
+      { '@type': 'City', name: 'St. Petersburg', containedIn: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'AdministrativeArea', name: 'Pinellas County', containedIn: { '@type': 'State', name: 'Florida' } },
       {
         '@type': 'City',
         name: 'Bradenton',
