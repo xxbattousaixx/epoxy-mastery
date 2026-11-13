@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { usePageTracking } from "@/hooks/usePageTracking";
+import ScrollToTop from "@/components/ScrollToTop";
 import '@/i18n/config';
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -38,6 +39,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <PageTracker>
               <Routes>
                 <Route path="/" element={<Index />} />
