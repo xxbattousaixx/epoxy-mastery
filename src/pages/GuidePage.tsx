@@ -7,7 +7,7 @@ import SEO from '@/components/SEO';
 import QuoteForm from '@/components/QuoteForm';
 import { Button } from '@/components/ui/button';
 import { getGuide } from '@/data/guides';
-import { LOCATIONS, locationPath } from '@/data/locations';
+import { LIVE_AREAS, locationPath } from '@/data/locations';
 import NotFound from './NotFound';
 
 const GuidePage = () => {
@@ -55,7 +55,7 @@ const GuidePage = () => {
               <h2 className="text-xl font-display font-bold mb-3">Related guides</h2>
               <ul className="space-y-2 mb-8">{g.related.map(r => { const rg = getGuide(r); return rg && <li key={r}><Link className="text-primary hover:underline" to={`/guides/${r}`}>{rg.title}</Link></li>; })}</ul>
               <h2 className="text-xl font-display font-bold mb-3">We install epoxy floors in</h2>
-              <div className="flex flex-wrap gap-2">{LOCATIONS.map(l => <Link key={l.slug} to={locationPath(l.slug)} className="text-sm px-3 py-1 rounded-full border border-border hover:border-primary hover:text-primary">{l.name}</Link>)}</div>
+              <div className="flex flex-wrap gap-2">{LIVE_AREAS.map(l => <Link key={l.slug} to={locationPath(l.slug)} className="text-sm px-3 py-1 rounded-full border border-border hover:border-primary hover:text-primary">{l.name}</Link>)}</div>
             </section>
           </div>
           <aside className="lg:sticky lg:top-28 h-fit bg-card border border-border rounded-xl p-6">

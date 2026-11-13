@@ -12,6 +12,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import logo from '@/assets/logo.png';
+import { GROUPS, LIVE_AREAS, locationPath } from '@/data/locations';
+import { DropdownMenuLabel, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -82,6 +84,23 @@ const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="px-4 py-2 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted flex items-center gap-1">
+                Locations <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-64">
+                {GROUPS.filter(g => LIVE_AREAS.some(a => a.group === g.name)).map(g => (
+                  <React.Fragment key={g.name}>
+                    <DropdownMenuLabel className="text-xs text-muted-foreground">{g.name}</DropdownMenuLabel>
+                    {LIVE_AREAS.filter(a => a.group === g.name).map(a => (
+                      <DropdownMenuItem key={a.slug} asChild><Link to={locationPath(a.slug)}>{a.name}</Link></DropdownMenuItem>
+                    ))}
+                  </React.Fragment>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild><Link to="/service-areas" className="font-semibold">All Service Areas</Link></DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Right Side Actions */}
@@ -165,6 +184,7 @@ const Header: React.FC = () => {
                   {link.label}
                 </Link>
               ))}
+              <Link to="/service-areas" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted">Locations</Link>
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="cta" className="w-full mt-4">
                   {t('nav.getQuote')}
