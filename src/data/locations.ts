@@ -1,3 +1,4 @@
+import { MORE } from './locationsMore';
 export interface LocFaq { q: string; a: string }
 export interface LocContent {
   intro: string[];              // hero intro paragraphs (2–3 sentences total)
@@ -171,6 +172,7 @@ export const AREAS: Area[] = [
   { slug: 'feather-sound', name: 'Feather Sound', group: 'Mid-Pinellas', zips: ['33762'], nearby: ['gateway-carillon', 'largo', 'pinellas-park', 'riviera-bay-placido-bayou'] },
 ];
 
+AREAS.forEach(a => { if (!a.content && MORE[a.slug]) a.content = MORE[a.slug]; });
 export const LIVE_AREAS = AREAS.filter(a => a.content);
 export const getArea = (slug: string) => AREAS.find(a => a.slug === slug);
 export const isLive = (slug: string) => !!getArea(slug)?.content;
