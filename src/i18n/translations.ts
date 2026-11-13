@@ -23,7 +23,7 @@ export const translations = {
       about: {
         title: "About EpoxyMasters",
         subtitle: "Crafting Excellence Since Day One",
-        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in Bradenton, Lakewood Ranch & Sarasota, Florida, we bring world-class epoxy flooring solutions to residential and commercial clients.",
+        description: "We are passionate artisans dedicated to transforming ordinary surfaces into extraordinary masterpieces. Based in St. Petersburg and serving Pinellas County, Bradenton, Lakewood Ranch & Sarasota, Florida, we bring world-class epoxy flooring solutions to residential and commercial clients.",
         mission: "Our Mission",
         missionText: "To deliver premium epoxy flooring solutions that exceed expectations in quality, durability, and aesthetic appeal—all at competitive prices.",
         vision: "Our Vision",
@@ -225,7 +225,7 @@ export const translations = {
           error: "Something went wrong. Please try again.",
         },
         info: {
-          address: "Bradenton, Lakewood Ranch & Sarasota, Florida",
+          address: "St. Petersburg, Pinellas County, Bradenton & Sarasota, FL",
           phone: "+1 (941) 518-1657",
           email: "edmena24@gmail.com",
           hours: "Mon-Sat: 8:00 AM - 6:00 PM",
@@ -237,7 +237,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Premium epoxy flooring solutions in Bradenton, Lakewood Ranch & Sarasota, Florida. Transform your space with our expert craftsmanship.",
+        description: "Premium epoxy flooring in St. Petersburg, Pinellas County, Bradenton & Sarasota, Florida. Transform your space with our expert craftsmanship.",
         quickLinks: "Quick Links",
         services: "Services",
         contact: "Contact",
@@ -281,7 +281,7 @@ export const translations = {
       about: {
         title: "Sobre EpoxyMasters",
         subtitle: "Creando Excelencia Desde el Primer Día",
-        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en Bradenton, Lakewood Ranch y Sarasota, Florida, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
+        description: "Somos artesanos apasionados dedicados a transformar superficies ordinarias en obras maestras extraordinarias. Ubicados en St. Petersburg, sirviendo al condado de Pinellas, Bradenton, Lakewood Ranch y Sarasota, Florida, llevamos soluciones de pisos epóxicos de clase mundial a clientes residenciales y comerciales.",
         mission: "Nuestra Misión",
         missionText: "Entregar soluciones premium de pisos epóxicos que superen las expectativas en calidad, durabilidad y atractivo estético—todo a precios competitivos.",
         vision: "Nuestra Visión",
@@ -483,7 +483,7 @@ export const translations = {
           error: "Algo salió mal. Por favor intente de nuevo.",
         },
         info: {
-          address: "Bradenton, Lakewood Ranch y Sarasota, Florida",
+          address: "St. Petersburg, Pinellas, Bradenton y Sarasota, FL",
           phone: "+1 (941) 518-1657",
           email: "edmena24@gmail.com",
           hours: "Lun-Sáb: 8:00 AM - 6:00 PM",
@@ -495,7 +495,7 @@ export const translations = {
       },
       // Footer
       footer: {
-        description: "Soluciones premium de pisos epóxicos en Bradenton, Lakewood Ranch y Sarasota, Florida. Transforme su espacio con nuestra artesanía experta.",
+        description: "Soluciones premium de pisos epóxicos en St. Petersburg, Pinellas, Bradenton y Sarasota, Florida. Transforme su espacio con nuestra artesanía experta.",
         quickLinks: "Enlaces Rápidos",
         services: "Servicios",
         contact: "Contacto",

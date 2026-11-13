@@ -12,6 +12,7 @@ import {
   ChevronDown,
   Play
 } from 'lucide-react';
+import AreaLinks from '@/components/AreaLinks';
 import Layout from '@/components/Layout';
 import ScrollThreeD from '@/components/ScrollThreeD';
 import SEO from '@/components/SEO';
@@ -415,6 +416,7 @@ const Index: React.FC = () => {
           </motion.div>
         </div>
       </section>
+    <AreaLinks />
     </Layout>
   );
 };

@@ -16,7 +16,8 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
-import LocationPage, { locationRoutes } from "./pages/LocationPage";
+import LocationPage from "./pages/LocationPage";
+import { LIVE_AREAS, locationPath } from "./data/locations";
 import ServiceAreas from "./pages/ServiceAreas";
 import Guides from "./pages/Guides";
 import GuidePage from "./pages/GuidePage";
@@ -50,8 +51,8 @@ const App = () => (
                 <Route path="/service-areas" element={<ServiceAreas />} />
                 <Route path="/guides" element={<Guides />} />
                 <Route path="/guides/:slug" element={<GuidePage />} />
-                {locationRoutes.map(r => (
-                  <Route key={r.path} path={r.path} element={<LocationPage loc={r.loc} />} />
+                {LIVE_AREAS.map(a => (
+                  <Route key={a.slug} path={locationPath(a.slug)} element={<LocationPage area={a} />} />
                 ))}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />

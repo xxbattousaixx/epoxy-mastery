@@ -17,9 +17,9 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://epoxy-masters.com';
-const DEFAULT_TITLE = 'EpoxyMasters - Epoxy Flooring | Bradenton, FL';
-const DEFAULT_DESCRIPTION = 'Premium epoxy and resin flooring in Bradenton, Lakewood Ranch & Sarasota, FL. Metallic epoxy, garage coatings, industrial floors. Free quotes!';
-const DEFAULT_KEYWORDS = 'epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, floor coating, Bradenton, Lakewood Ranch, Sarasota, Florida, FL, epoxy contractor';
+const DEFAULT_TITLE = 'Epoxy Flooring St. Petersburg, FL | Garage & Commercial Floors | EpoxyMasters';
+const DEFAULT_DESCRIPTION = 'Garage, metallic and commercial epoxy flooring in St. Petersburg & Pinellas County, FL. Free quotes. Call (941) 518-1657.';
+const DEFAULT_KEYWORDS = 'epoxy flooring, resin flooring, metallic epoxy, garage floor coating, industrial flooring, decorative concrete, floor coating, St. Petersburg, Pinellas County, Bradenton, Lakewood Ranch, Sarasota, Florida, FL, epoxy contractor';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const SEO: React.FC<SEOProps> = ({
@@ -48,16 +48,14 @@ const SEO: React.FC<SEOProps> = ({
     email: 'edmena24@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Bradenton',
-      addressLocality: 'Bradenton',
+      addressLocality: 'St. Petersburg',
       addressRegion: 'FL',
-      postalCode: '34205',
-      addressCountry: 'US',
+            addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 27.4989,
-      longitude: -82.5748,
+      latitude: 27.7676,
+      longitude: -82.6403,
     },
     openingHoursSpecification: [
       {
@@ -83,12 +81,14 @@ const SEO: React.FC<SEOProps> = ({
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 27.4989,
-        longitude: -82.5748,
+        latitude: 27.7676,
+        longitude: -82.6403,
       },
       geoRadius: '50000',
     },
     serviceArea: [
+      { '@type': 'City', name: 'St. Petersburg', containedIn: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'AdministrativeArea', name: 'Pinellas County', containedIn: { '@type': 'State', name: 'Florida' } },
       {
         '@type': 'City',
         name: 'Bradenton',
@@ -291,7 +291,7 @@ const SEO: React.FC<SEOProps> = ({
 
       {/* Geo Tags */}
       <meta name="geo.region" content="US-FL" />
-      <meta name="geo.placename" content="Bradenton" />
+      <meta name="geo.placename" content="St. Petersburg" />
       <meta name="geo.position" content="27.4989;-82.5748" />
       <meta name="ICBM" content="27.4989, -82.5748" />
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { LIVE_AREAS, locationPath } from '@/data/locations';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
@@ -37,7 +38,7 @@ const Footer: React.FC = () => {
     <footer className="bg-epoxy-charcoal text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
@@ -94,6 +95,17 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h4 className="font-display font-semibold text-lg mb-6">Service Areas</h4>
+            <ul className="space-y-3">
+              {LIVE_AREAS.map(a => (
+                <li key={a.slug}><Link to={locationPath(a.slug)} className="text-epoxy-steel hover:text-primary transition-colors">Epoxy floors {a.name}</Link></li>
+              ))}
+              <li><Link to="/service-areas" className="text-primary hover:underline">All service areas</Link></li>
             </ul>
           </div>
 

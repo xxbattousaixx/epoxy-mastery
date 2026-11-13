@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import AreaLinks from '@/components/AreaLinks';
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
@@ -151,6 +152,7 @@ const Services: React.FC = () => {
           </motion.div>
         </div>
       </section>
+    <AreaLinks title="Areas we serve" />
     </Layout>
   );
 };
