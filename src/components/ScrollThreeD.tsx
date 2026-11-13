@@ -23,6 +23,7 @@ const ScrollThreeD: React.FC = () => {
   }>>([]);
   const [currentSection, setCurrentSection] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [notPast, setNotPast] = useState(true);
   const { t } = useTranslation();
 
   // Epoxy flooring process sections - no CTA buttons
@@ -255,6 +256,7 @@ const ScrollThreeD: React.FC = () => {
       const containerBottom = containerRef.current.getBoundingClientRect().bottom;
       // Visible only while the 3D section occupies the viewport; hide once the next content arrives
       setIsVisible(containerTop < windowHeight * 0.5 && containerBottom > windowHeight * 0.6);
+      setNotPast(containerBottom > windowHeight * 0.6);
       
       // Calculate progress based on how far we've scrolled through this section
       const scrolledIntoContainer = -containerTop;
@@ -286,7 +288,7 @@ const ScrollThreeD: React.FC = () => {
     <div ref={containerRef} className="relative w-full" style={{ height: `${displaySections.length * 100}vh` }}>
       <canvas
         ref={canvasRef}
-        className={`fixed top-0 left-0 w-full h-full transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+        className={`fixed top-0 left-0 w-full h-full transition-opacity duration-500 ${notPast ? 'opacity-100' : 'opacity-0'}`}
         style={{ zIndex: 0, pointerEvents: 'none' }}
       />
 
