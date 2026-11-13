@@ -1,0 +1,1 @@
+- Build step (vite-plugin-static-pages.ts) writes per-route HTML from public/sitemap.xml with self canonical + crawlable links; add every new public route to the sitemap so crawlers without JS see it.
