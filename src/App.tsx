@@ -16,6 +16,10 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import LocationPage, { locationRoutes } from "./pages/LocationPage";
+import ServiceAreas from "./pages/ServiceAreas";
+import Guides from "./pages/Guides";
+import GuidePage from "./pages/GuidePage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +47,12 @@ const App = () => (
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/service-areas" element={<ServiceAreas />} />
+                <Route path="/guides" element={<Guides />} />
+                <Route path="/guides/:slug" element={<GuidePage />} />
+                {locationRoutes.map(r => (
+                  <Route key={r.path} path={r.path} element={<LocationPage loc={r.loc} />} />
+                ))}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
